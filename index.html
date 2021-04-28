@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>vueproject-vuecli2</title>
+  </head>
+  <style>
+    #app{
+      width: 500px;
+      height: 400px;
+      background-color: orange;
+      /*开启flex布局
+      flex： 块级元素
+      inline-flex： 行内元素
+      */
+      display: flex;  /*设置了flex,盒子里不在区分块级元素或行内元素*/
+
+      /*flex-direction： 决定主轴的方向  默认情况下沿着main axis 主轴 从 main start 开始往 main end 方向排布
+      row： 主轴从左到右（默认）
+      row-reverse: 主轴从右到左 （反向）
+      column： 主轴从上到下
+      column-revers： 主轴从下到上*/
+      flex-direction: row;
+
+    /*justify-content： 决定flex item 在主轴上的对齐方式
+      flex-start： 与main start 对齐 （默认）
+      flex-end： 与main end 对齐
+      center： 居中对齐
+      space-between： flex item之间的距离相等，  与main start 和 main end 两端对齐
+      space-evenly： flex item 之间的距离相等， flex items与 main start 和 main end 之间的距离等于flex item 之间的距离
+      space-around： flex item 之间的距离相等， flex items与 main start 和 main end 之间的距离 是 flex item 之间的距离的一半
+     */
+      justify-content: flex-start;
+
+      /*align-items:  决定flex item 在交叉轴上的对齐方式
+      normal/stretch： 当flex items 在cross axis 方向的size 为auto 时， 会自动拉伸至填充 flex container
+      flex-start： 与cross start 对齐
+      flex-end： 与cross end 对齐
+      center： 居中对齐
+      baseline： 与基准线对齐 （基准线在文本的底部）
+      */
+      align-items: normal;
+
+      /*flex-wrap 默认情况下，所有的flex item 都会在同一行显示
+      nowrap： 不换行,单行 （默认）
+      wrap： 换行显示，多行
+      wrap-reverse： （反转) 多行， 对比wrap， cross start 与 cross end 相反
+      */
+      flex-wrap: wrap;
+
+      /*flex-flow：缩写属性 -> flex-direction || flex wrap 两个的组合缩写*/
+      flex-flow: row wrap;
+
+      /*align-content： 决定多行的flex item 在 cross axis 上的对齐方式
+      stretch： （默认值） 与align-item 的stretch 类似
+      flex-start： 与cross start 对齐 （默认）
+      flex-end： 与cross end 对齐
+      center： 居中对齐
+      space-between： flex item之间的距离相等，  与cross start 和 与cross end 两端对齐
+      space-evenly： flex item 之间的距离相等， flex items与 与cross start 和 与cross end 之间的距离等于flex item 之间的距离
+      space-around： flex item 之间的距离相等， flex items与 与cross start 和 与cross end 之间的距离 是 flex item 之间的距离的一半*/
+      align-content: flex-start;
+ }
+
+ .item{
+   width: 100px;
+   height: 100px;
+   color: #fff;
+   text-align: center;
+   line-height: 100px;
+ }
+ .item1 {
+   background-color: #f00;
+   font-size: 90px;
+
+   /*order: 决定flex item 的排布顺序 （默认为0）可以舍子任意整数，数字越小排在最前
+   align-self：可以覆盖flex container设置的 align-item ，单独设置自己cross axis的的对齐方式，值与align-item 类似
+   flex-grow： flex item 的宽度或高度，可以按flex container 剩余的宽度按比例扩展 （默认为0）
+   flex-shrink： flex item 的宽度或高度，可以按超出flex container 的宽度按比例缩减 （默认为1）
+   flex-basis： 决定flex item 在main axis 上的大小， 设置了这个属性后 item的优先级  min-width/max-width--->flex-basis---> width ---> 内容自己的width
+   flex： 是 flex-grow || flex- shrink || flex-basis 的缩写
+   */
+   order: 1;
+   align-self: flex-end;
+   flex-grow: 1;
+   flex-shrink: 1;
+   flex-basis: 200px;
+ }
+
+ .item2 {
+   background-color: #00f7ff;
+ }
+
+ .item3 {
+   background-color: #6aff00;
+ }
+</style>
+  <body>
+    <div id="app">
+      <div class="item item1">item1</div>
+      <div class="item item2">item2</div>
+      <div class="item item3">item3</div>
+<!--      <div class="item item1">item4</div>-->
+<!--      <div class="item item2">item5</div>-->
+<!--      <div class="item item3">item6</div>-->
+<!--      <div class="item item1">item7</div>-->
+<!--      <div class="item item2">item8</div>-->
+<!--      <div class="item item3">item9</div>-->
+    </div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
